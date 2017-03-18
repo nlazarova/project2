@@ -73,7 +73,7 @@ echo "<a href='logout.php' class='btn btn-danger btn-sm' role='button'> Log Out<
 //if(empty($_POST['submit'])){
 //$user_email=$_GET['user_email'];
 $user_email=$_SESSION['username'];
-$read_query = "SELECT * FROM `tasks` JOIN `users` ON `users`.`user_id`=`tasks`.`user_id` JOIN `flags` ON `tasks`.`flag_id`=`flags`.`flag_id` WHERE `tasks`.`date_deleted` IS NULL AND `users`.`user_email` = '$user_email'";
+$read_query = "SELECT * FROM `tasks` JOIN `users` ON `users`.`user_id`=`tasks`.`user_id` WHERE `tasks`.`date_deleted` IS NULL AND `users`.`user_email` = '$user_email'";
 $result = mysqli_query($conn, $read_query);
 
 if (mysqli_num_rows($result) >0) {
